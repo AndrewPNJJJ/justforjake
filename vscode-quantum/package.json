@@ -1,0 +1,79 @@
+{
+    "name": "vscode-quantum",
+    "displayName": "Quantum Syntax & Tools",
+    "description": "Syntax highlighting and productivity tools for Quantum .qin and .dw files.",
+    "version": "0.1.0",
+    "publisher": "DPN",
+    "main": "./extension.js",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "quantum",
+                "aliases": [
+                    "Quantum",
+                    "quantum"
+                ],
+                "extensions": [
+                    ".qin",
+                    ".dw",
+                    "axis",
+                    "banner"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "quantum",
+                "scopeName": "source.quantum",
+                "path": "./syntaxes/quantum.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "quantum.increment",
+                "title": "Quantum: Increment Selection"
+            },
+            {
+                "command": "quantum.asked",
+                "title": "Quantum: Add Asked Filter"
+            },
+            {
+                "command": "quantum.banner",
+                "title": "Quantum: Auto-ID Banner"
+            },
+            {
+                "command": "quantum.smartPaste",
+                "title": "Quantum: Smart Paste (Inc Column)"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "quantum.increment",
+                "key": "ctrl+shift+i",
+                "when": "editorLangId == quantum"
+            },
+            {
+                "command": "quantum.asked",
+                "key": "ctrl+shift+a",
+                "when": "editorLangId == quantum"
+            },
+            {
+                "command": "quantum.banner",
+                "key": "ctrl+shift+b",
+                "when": "editorLangId == quantum"
+            },
+            {
+                "command": "quantum.smartPaste",
+                "key": "ctrl+shift+v",
+                "when": "editorLangId == quantum"
+            }
+        ]
+    }
+}

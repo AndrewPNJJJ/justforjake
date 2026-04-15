@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Quantum",
+    "scopeName": "source.quantum",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#columns"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.block.quantum",
+                    "begin": "/\\*",
+                    "end": "$"
+                },
+                {
+                    "name": "comment.line.quantum",
+                    "match": "^C.*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.quantum",
+                    "match": "^\\s*(n\\d\\d|dwn|net[0-9]|netend\\d+|tab|add|\\*include)(?=\\s|$)"
+                },
+                {
+                    "name": "variable.parameter.quantum",
+                    "match": "[a-zA-Z0-9_]+(?==)"
+                },
+                {
+                    "name": "entity.name.tag.quantum",
+                    "match": "\\{[^}]+\\}"
+                }
+            ]
+        },
+        "columns": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.quantum",
+                    "match": "c(\\d+|\\([a-z]?\\d+(,\\d+)?\\))"
+                },
+                {
+                    "name": "constant.language.quantum",
+                    "match": "id=[A-Za-z]+"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.quantum",
+                    "match": "'[^']*'"
+                }
+            ]
+        }
+    }
+}
